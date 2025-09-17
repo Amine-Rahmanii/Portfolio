@@ -113,9 +113,18 @@ export const SOLAR_SYSTEM_CONFIG = {
             rings: false,
             continents: true,
             clouds: true,
-            content: {
+                content: {
                 title: "Mes Projets",
                 description: `
+                    <h3>🎯 AI Cost Prediction System</h3>
+                    <p>Système d'intelligence artificielle pour la prédiction des coûts de projets d'ingénierie avec une précision de 85%+. Utilise Random Forest et des algorithmes de machine learning avancés pour analyser 3,245 projets et identifier les 15+ facteurs les plus influents dans la variation des coûts.</p>
+                    <div style="margin: 10px 0;">
+                        <a href="https://github.com/Amine-Rahmanii/ai-cost-prediction-system" target="_blank" 
+                           style="background: linear-gradient(45deg, #4caf50, #2196f3); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
+                           🔬 Voir le Code & Dataset
+                        </a>
+                    </div>
+                    
                     <h3>🤖 Analyse de Sentiment NVIDIA</h3>
                     <p>Application web d'analyse de sentiment en temps réel utilisant l'IA et le machine learning. Interface Streamlit interactive pour analyser les opinions et émotions dans les textes.</p>
                     <div style="margin: 10px 0;">
@@ -136,12 +145,13 @@ export const SOLAR_SYSTEM_CONFIG = {
                     
                     <h3>🔬 Projets de Recherche & Développement</h3>
                     <div style="background: rgba(128,0,255,0.1); padding: 15px; border-left: 4px solid #8000ff; margin: 10px 0;">
-                        <h4 style="color: #8000ff; margin: 0 0 10px 0;">Machine Learning & Finance Quantitative</h4>
+                        <h4 style="color: #8000ff; margin: 0 0 10px 0;">Intelligence Artificielle & Prédiction</h4>
                         <ul style="margin: 10px 0; color: #cccccc;">
-                            <li><strong>📊 Modèles de Détection d'Anomalies :</strong> Développement d'algorithmes ML pour identifier les anomalies dans les séries temporelles boursières</li>
+                            <li><strong>🎯 Prédiction des Coûts par IA :</strong> Système IA avec 85%+ de précision utilisant Random Forest sur 3,245 projets d'ingénierie</li>
+                            <li><strong>📊 Analyse Prédictive :</strong> Identification de 15+ facteurs influents dans la variation des coûts de projets</li>
                             <li><strong>🤖 Modèles Supervisés :</strong> Implémentation de Random Forest, Gradient Boosting pour la prédiction de prix d'actifs</li>
                             <li><strong>📈 Feature Engineering :</strong> Création d'indicateurs techniques et transformation de données financières</li>
-                            <li><strong>⚡ Évaluation de Performance :</strong> Métriques d'accuracy, F1-score, matrices de confusion pour optimiser les résultats</li>
+                            <li><strong>⚡ Évaluation de Performance :</strong> Métriques MAE, RMSE, R² pour optimiser les résultats</li>
                         </ul>
                         
                         <h4 style="color: #8000ff; margin: 15px 0 10px 0;">Technologies Utilisées :</h4>
@@ -150,6 +160,7 @@ export const SOLAR_SYSTEM_CONFIG = {
                             <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">Pandas</span>
                             <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">NumPy</span>
                             <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">Scikit-learn</span>
+                            <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">Plotly</span>
                             <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">Streamlit</span>
                         </p>
                     </div>
