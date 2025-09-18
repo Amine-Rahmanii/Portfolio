@@ -349,46 +349,49 @@ export const SOLAR_SYSTEM_CONFIG = {
                 description: `
                     <h3>📞 Informations de Contact</h3>
                     <div style="background: rgba(0,170,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
-                        <p style="margin: 5px 0;"><strong>📱 Téléphone :</strong> +33 7 82 75 43 54</p>
-                        <p style="margin: 5px 0;"><strong>📧 Email :</strong> amine.rahmani21@neoma-bs.com</p>
-                        <p style="margin: 5px 0;"><strong>📍 Localisation :</strong> France</p>
+                        <p style="margin: 8px 0; font-size: 14px;"><strong>📱 Téléphone :</strong> +33 7 82 75 43 54</p>
+                        <p style="margin: 8px 0; font-size: 14px;"><strong>📧 Email :</strong> amine.rahmani21@neoma-bs.com</p>
+                        <p style="margin: 8px 0; font-size: 14px;"><strong>📍 Localisation :</strong> France</p>
                     </div>
                     
-                    <h3>🌍 Portfolio & Projets</h3>
+                    <h3>� Liens Professionnels</h3>
                     <div style="background: rgba(255,170,0,0.1); padding: 15px; border-left: 4px solid #ffaa00; margin: 10px 0;">
-                        <p style="margin: 5px 0;"><strong>🌐 Portfolio 3D :</strong> https://amine-rahmanii.github.io/Portfolio/</p>
-                        <p style="margin: 5px 0; font-style: italic;">Découvrez mes différents projets et réalisations dans le domaine de l'entreprise digitalisée.</p>
+                        <div style="margin: 10px 0;">
+                            <a href="https://amine-rahmanii.github.io/Portfolio/" target="_blank" 
+                               style="background: linear-gradient(45deg, #00aaff, #0088cc); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 5px 5px 0; font-weight: bold;">
+                               🚀 Portfolio 3D
+                            </a>
+                            <a href="https://github.com/Amine-Rahmanii" target="_blank" 
+                               style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 5px 5px 0; font-weight: bold;">
+                               💻 GitHub
+                            </a>
+                        </div>
                     </div>
                     
                     <h3>💼 À Propos de Moi</h3>
                     <div style="background: rgba(0,170,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
-                        <p style="color: #cccccc; line-height: 1.6; margin: 10px 0;">
+                        <p style="color: #cccccc; line-height: 1.6; margin: 10px 0; font-size: 14px;">
                             <strong>Étudiant en Master Digital Management</strong> à NEOMA Business School, spécialisé en finance de marché et technologies émergentes. 
                             Passionné par l'intersection entre finance, IA et transformation digitale.
                         </p>
-                        
-                        <h4 style="color: #00aaff; margin: 15px 0 10px 0;">🎓 Certifications</h4>
-                        <ul style="margin: 10px 0; color: #cccccc;">
-                            <li><strong>Supervised Machine Learning</strong> - DeepLearning.AI (2025)</li>
-                            <li><strong>Introduction to Financial Markets</strong> - Yale University/Coursera (2025)</li>
-                            <li><strong>Scikit-learn for Machine Learning</strong> - LinkedIn (2025)</li>
-                            <li><strong>Python for Data Science</strong> - LinkedIn (2025)</li>
-                            <li><strong>IELTS 6.5</strong> - British Council (2023)</li>
-                        </ul>
-                        
-                        <h4 style="color: #00aaff; margin: 15px 0 10px 0;">🚀 Compétences Techniques</h4>
-                        <ul style="margin: 10px 0; color: #cccccc;">
-                            <li><strong>Machine Learning :</strong> Python, Scikit-learn, Pandas, NumPy</li>
-                            <li><strong>Finance Quantitative :</strong> Analyse de marchés, Gestion de risques</li>
-                            <li><strong>Développement Web :</strong> JavaScript, Three.js, HTML/CSS</li>
-                            <li><strong>Data Science :</strong> Visualisation de données, Modélisation prédictive</li>
-                        </ul>
+                        <p style="color: #cccccc; line-height: 1.6; margin: 10px 0; font-size: 14px;">
+                            Développeur d'applications IA avec expertise en machine learning, analyse prédictive et développement web 3D. 
+                            Créateur de solutions innovantes combinant finance quantitative et intelligence artificielle.
+                        </p>
                     </div>
                     
                     <h3>🚀 Disponibilité</h3>
-                    <p style="color: #00aaff;">
-                        Ouvert aux opportunités de stage en finance quantitative, data science et projets innovants dans le domaine fintech et IA.
-                    </p>
+                    <div style="background: rgba(0,255,100,0.1); padding: 15px; border-left: 4px solid #00ff64; margin: 10px 0;">
+                        <p style="color: #00ff64; font-weight: bold; margin: 5px 0;">
+                            ✅ Ouvert aux opportunités
+                        </p>
+                        <p style="color: #cccccc; margin: 5px 0; font-size: 13px;">
+                            Stage en finance quantitative, data science et projets fintech & IA
+                        </p>
+                        <p style="color: #cccccc; margin: 5px 0; font-size: 13px;">
+                            Collaborations sur des projets innovants et missions freelance
+                        </p>
+                    </div>
                 `
             }
         }
