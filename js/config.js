@@ -143,6 +143,24 @@ export const SOLAR_SYSTEM_CONFIG = {
                         </a>
                     </div>
                     
+                    <h3>Customer 360 Dashboard</h3>
+                    <p>Dashboard interactif explorant les donn&eacute;es e-commerce br&eacute;siliennes (Olist) pour suivre les KPI client 360&deg;, performances logistiques et satisfaction.</p>
+                    <div style="margin: 10px 0;">
+                        <a href="https://github.com/Amine-Rahmanii/Customer-360-Dashboard" target="_blank"
+                           style="background: linear-gradient(45deg, #ff9800, #ff5722); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
+                           Code GitHub
+                        </a>
+                    </div>
+                    
+                    <h3>Suivi des Tickets Service Client</h3>
+                    <p>Int&eacute;gration Salesforce Service Cloud &amp; Jira pour synchroniser les tickets, automatiser les workflows support et fournir un reporting centralis&eacute;.</p>
+                    <div style="margin: 10px 0;">
+                        <a href="https://github.com/Amine-Rahmanii/Suivi-des-tickets-Service-Client-Int-gration-Salesforce-Jira" target="_blank"
+                           style="background: linear-gradient(45deg, #607d8b, #455a64); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
+                           Code GitHub
+                        </a>
+                    </div>
+                    
                     <h3>🔬 Projets de Recherche & Développement</h3>
                     <div style="background: rgba(128,0,255,0.1); padding: 15px; border-left: 4px solid #8000ff; margin: 10px 0;">
                         <h4 style="color: #8000ff; margin: 0 0 10px 0;">Intelligence Artificielle & Prédiction</h4>
