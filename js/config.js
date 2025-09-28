@@ -116,50 +116,70 @@ export const SOLAR_SYSTEM_CONFIG = {
                 content: {
                 title: "Mes Projets",
                 description: `
-                    <h3>🎯 AI Cost Prediction System</h3>
-                    <p>Système d'intelligence artificielle pour la prédiction des coûts de projets d'ingénierie avec une précision de 85%+. Utilise Random Forest et des algorithmes de machine learning avancés pour analyser 3,245 projets et identifier les 15+ facteurs les plus influents dans la variation des coûts.</p>
-                    <div style="margin: 10px 0;">
-                        <a href="https://github.com/Amine-Rahmanii/ai-cost-prediction-system" target="_blank" 
-                           style="background: linear-gradient(45deg, #4caf50, #2196f3); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
-                           🔬 Voir le Code & Dataset
-                        </a>
-                    </div>
+                          <h3>🎯 AI Cost Prediction System</h3>
+                          <p>Système d'intelligence artificielle pour la prédiction des coûts de projets d'ingénierie avec une précision de 85%+. Utilise Random Forest et des algorithmes de machine learning avancés pour analyser 3,245 projets et identifier les 15+ facteurs les plus influents dans la variation des coûts.</p>
+                          <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="https://github.com/Amine-Rahmanii/ai-cost-prediction-system" target="_blank" 
+                                    style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    � Code GitHub
+                                </a>
+                                <a href="https://github.com/Amine-Rahmanii/ai-cost-prediction-system/tree/main/notebooks" target="_blank" 
+                                    style="background: linear-gradient(45deg, #f5f5f5, #e0e0e0); color: #333; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold; border: 1px solid #bbb;">
+                                    📓 Jupyter Notebooks
+                                </a>
+                          </div>
                     
-                    <h3>🤖 Analyse de Sentiment NVIDIA</h3>
-                    <p>Application web d'analyse de sentiment en temps réel utilisant l'IA et le machine learning. Interface Streamlit interactive pour analyser les opinions et émotions dans les textes.</p>
-                    <div style="margin: 10px 0;">
-                        <a href="https://nvidia-sentiment-analysiss.streamlit.app/" target="_blank" 
-                           style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
-                           🚀 Voir le Projet Live
-                        </a>
-                    </div>
+                          <h3>🤖 Analyse de Sentiment NVIDIA</h3>
+                          <p>Application web d'analyse de sentiment en temps réel utilisant l'IA et le machine learning. Interface Streamlit interactive pour analyser les opinions et émotions dans les textes.</p>
+                          <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="https://nvidia-sentiment-analysiss.streamlit.app/" target="_blank" 
+                                    style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    🚀 Streamlit Live
+                                </a>
+                                <a href="https://github.com/Amine-Rahmanii/nvidia-sentiment-analysis" target="_blank" 
+                                    style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    💻 Code GitHub
+                                </a>
+                          </div>
                     
-                    <h3>📈 Classificateur d'Instruments Financiers</h3>
-                    <p>Application de machine learning pour la classification automatique d'instruments financiers. Utilise des algorithmes d'IA pour analyser et catégoriser différents types d'actifs financiers avec une interface Streamlit intuitive.</p>
-                    <div style="margin: 10px 0;">
-                        <a href="https://financialinstrumentsclassifier.streamlit.app/" target="_blank" 
-                           style="background: linear-gradient(45deg, #ff6b35, #f7931e); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
-                           📊 Classifier en Direct
-                        </a>
-                    </div>
+                          <h3>📈 Classificateur d'Instruments Financiers</h3>
+                          <p>Application de machine learning pour la classification automatique d'instruments financiers. Utilise des algorithmes d'IA pour analyser et catégoriser différents types d'actifs financiers avec une interface Streamlit intuitive.</p>
+                          <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="https://financialinstrumentsclassifier.streamlit.app/" target="_blank" 
+                                    style="background: linear-gradient(45deg, #ff6b35, #f7931e); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    📊 Streamlit Live
+                                </a>
+                                <a href="https://github.com/Amine-Rahmanii/financial-instruments-classifier" target="_blank" 
+                                    style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    💻 Code GitHub
+                                </a>
+                          </div>
                     
-                    <h3>Customer 360 Dashboard</h3>
-                    <p>Dashboard interactif explorant les donn&eacute;es e-commerce br&eacute;siliennes (Olist) pour suivre les KPI client 360&deg;, performances logistiques et satisfaction.</p>
-                    <div style="margin: 10px 0;">
-                        <a href="https://github.com/Amine-Rahmanii/Customer-360-Dashboard" target="_blank"
-                           style="background: linear-gradient(45deg, #ff9800, #ff5722); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
-                           Code GitHub
-                        </a>
-                    </div>
+                          <h3>Customer 360 Dashboard</h3>
+                          <p>Dashboard interactif explorant les donn&eacute;es e-commerce br&eacute;siliennes (Olist) pour suivre les KPI client 360&deg;, performances logistiques et satisfaction.</p>
+                          <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="https://amine-rahmanii-customer-360-dashboard-app-rtzbsx.streamlit.app/" target="_blank"
+                                    style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    🚀 Streamlit Live
+                                </a>
+                                <a href="https://github.com/Amine-Rahmanii/Customer-360-Dashboard" target="_blank"
+                                    style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    💻 Code GitHub
+                                </a>
+                          </div>
                     
-                    <h3>Suivi des Tickets Service Client</h3>
-                    <p>Int&eacute;gration Salesforce Service Cloud &amp; Jira pour synchroniser les tickets, automatiser les workflows support et fournir un reporting centralis&eacute;.</p>
-                    <div style="margin: 10px 0;">
-                        <a href="https://github.com/Amine-Rahmanii/Suivi-des-tickets-Service-Client-Int-gration-Salesforce-Jira" target="_blank"
-                           style="background: linear-gradient(45deg, #607d8b, #455a64); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin: 5px 0; font-weight: bold;">
-                           Code GitHub
-                        </a>
-                    </div>
+                          <h3>Suivi des Tickets Service Client</h3>
+                          <p>Int&eacute;gration Salesforce Service Cloud &amp; Jira pour synchroniser les tickets, automatiser les workflows support et fournir un reporting centralis&eacute;.</p>
+                          <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <a href="https://amine-rahmanii-suivi-des-tickets-service-client-int--app-z0e2us.streamlit.app/" target="_blank"
+                                    style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    🚀 Streamlit Live
+                                </a>
+                                <a href="https://github.com/Amine-Rahmanii/Suivi-des-tickets-Service-Client-Int-gration-Salesforce-Jira" target="_blank"
+                                    style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
+                                    💻 Code GitHub
+                                </a>
+                          </div>
                     
                     <h3>🔬 Projets de Recherche & Développement</h3>
                     <div style="background: rgba(128,0,255,0.1); padding: 15px; border-left: 4px solid #8000ff; margin: 10px 0;">
@@ -186,14 +206,6 @@ export const SOLAR_SYSTEM_CONFIG = {
                     <h3>Portfolio Spatial Interactif</h3>
                     <p>Application 3D immersive utilisant Three.js pour explorer un système solaire portfolio. Navigation en vaisseau spatial avec interface futuriste.</p>
                     
-                    <h3>Galerie d'Art Virtuelle</h3>
-                    <p>Musée virtuel en WebGL permettant de visiter des expositions d'art en réalité virtuelle avec interactions gestuelles.</p>
-                    
-                    <h3>Dashboard Analytics 3D</h3>
-                    <p>Interface de visualisation de données en trois dimensions avec graphiques interactifs et animations fluides.</p>
-                    
-                    <h3>Jeu de Course Spatial</h3>
-                    <p>Jeu de course en ligne multijoueur dans l'espace avec physics réalistes et effets visuels avancés.</p>
                 `
             }
         },
