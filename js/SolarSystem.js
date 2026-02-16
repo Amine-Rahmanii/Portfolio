@@ -204,8 +204,8 @@ class SolarSystem {
             planetGroup.add(rings);
         }
         
-        // Commenté : nuages de la Terre retirés pour plus de clarté
-        // if (config.clouds && config.name === 'Terre') {
+        // Commented: Earth clouds removed for clarity
+        // if (config.clouds && config.name === 'Earth') {
         //     const clouds = this.createClouds(config);
         //     planetGroup.add(clouds);
         // }
@@ -216,7 +216,7 @@ class SolarSystem {
         }
         
         // Ajouter un effet de glow pour certaines planètes
-        if (config.name === 'Vénus' || config.name === 'Jupiter' || config.name === 'Terre') {
+        if (config.name === 'Venus' || config.name === 'Jupiter' || config.name === 'Earth') {
             const glow = this.createGlow(config);
             planetGroup.add(glow);
         }
@@ -241,7 +241,7 @@ class SolarSystem {
         let texture;
         
         switch(config.name) {
-            case 'Mercure':
+            case 'Mercury':
                 texture = this.textures.mercury;
                 break;
             case 'Mars':
@@ -282,7 +282,7 @@ class SolarSystem {
             case 'Jupiter':
                 texture = this.textures.jupiter;
                 break;
-            case 'Saturne':
+            case 'Saturn':
                 texture = this.textures.saturn;
                 break;
             default:
@@ -311,7 +311,7 @@ class SolarSystem {
             opacity: 0.9
         });
         
-        if (config.name === 'Vénus') {
+        if (config.name === 'Venus') {
             material.map = this.textures.venus;
         }
         
@@ -344,8 +344,8 @@ class SolarSystem {
             side: THREE.DoubleSide
         });
         
-        // Utiliser la texture d'anneaux pour Saturne
-        if (config.name === 'Saturne') {
+        // Use ring texture for Saturn
+        if (config.name === 'Saturn') {
             ringMaterial.map = this.textures.rings;
             ringMaterial.transparent = true;
             ringMaterial.opacity = 0.8;

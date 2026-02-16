@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Portfolio Spatial">
+    <meta name="apple-mobile-web-app-title" content="Space Portfolio">
     <meta name="format-detection" content="telephone=no">
-    <title>Portfolio Système Solaire - Exploration Spatiale</title>
+    <title>Solar System Portfolio - Space Exploration</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Interface du cockpit -->
+    <!-- Cockpit interface -->
     <div id="cockpit-ui">
         <div id="hud">
             <div class="hud-panel top-left">
                 <div class="navigation-info">
                     <div class="speed-indicator">
-                        <span class="label">VITESSE</span>
+                        <span class="label">SPEED</span>
                         <span id="speed-value">0.0</span>
                         <span class="unit">U/s</span>
                     </div>
                     <div class="engine-status">
-                        <span class="label">MOTEUR</span>
+                        <span class="label">ENGINE</span>
                         <span id="engine-status">IDLE</span>
                     </div>
                     <div class="position-indicator">
@@ -40,8 +40,8 @@
             
             <div class="hud-panel top-right">
                 <div class="target-info">
-                    <span class="label">CIBLE</span>
-                    <div id="target-name">Aucune</div>
+                    <span class="label">TARGET</span>
+                    <div id="target-name">None</div>
                     <div id="target-distance">-- km</div>
                 </div>
             </div>
@@ -49,32 +49,32 @@
             <div class="hud-panel bottom-center">
                 <div class="crosshair"></div>
                 <div class="interaction-prompt" id="interaction-prompt" style="display: none;">
-                    <span>Cliquez pour interagir</span>
+                    <span>Click to interact</span>
                 </div>
             </div>
         </div>
         
-        <!-- Contrôles -->
+        <!-- Controls -->
         <div id="controls-info">
             <div class="control-item">
                 <span class="key">↑↓←→</span>
-                <span class="action">Déplacement</span>
+                <span class="action">Movement</span>
             </div>
             <div class="control-item">
-                <span class="key">Souris</span>
+                <span class="key">Mouse</span>
                 <span class="action">Rotation</span>
             </div>
             <div class="control-item">
-                <span class="key">Clic droit</span>
-                <span class="action">Accélération</span>
+                <span class="key">Right click</span>
+                <span class="action">Boost</span>
             </div>
             <div class="control-item">
-                <span class="key">Clic gauche</span>
-                <span class="action">Interaction</span>
+                <span class="key">Left click</span>
+                <span class="action">Interact</span>
             </div>
         </div>
         
-        <!-- Bouton d'aide -->
+        <!-- Help button -->
         <div id="help-button" style="
             position: fixed;
             top: 20px;
@@ -97,15 +97,15 @@
             ?
         </div>
         
-        <!-- Contrôles pour mobile -->
+        <!-- Mobile controls -->
         <div class="mobile-controls" style="display: none;">
-            <div>📱 Appuyez sur l'écran pour déverrouiller la vue</div>
-            <div>👆 Faites glisser pour regarder autour</div>
-            <div>🌍 Approchez-vous des planètes pour interagir</div>
+            <div>📱 Tap the screen to unlock the view</div>
+            <div>👆 Swipe to look around</div>
+            <div>🌍 Get closer to planets to interact</div>
         </div>
     </div>
 
-    <!-- Modal pour le contenu des planètes -->
+    <!-- Modal for planet content -->
     <div id="planet-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -113,106 +113,106 @@
                 <span class="close" id="close-modal">&times;</span>
             </div>
             <div class="modal-body" id="modal-body">
-                <!-- Contenu dynamique -->
+                <!-- Dynamic content -->
             </div>
         </div>
     </div>
 
-    <!-- Modal d'aide -->
+    <!-- Help modal -->
     <div id="help-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>🚀 Guide d'exploration spatiale</h2>
+                <h2>🚀 Space Exploration Guide</h2>
                 <span class="close" onclick="toggleHelpModal()">&times;</span>
             </div>
             <div class="modal-body">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 20px;">
                     <div>
-                        <h3>🎮 Contrôles - Ordinateur</h3>
+                        <h3>🎮 Controls - Desktop</h3>
                         <ul style="list-style: none; padding: 0;">
-                            <li><span class="key">↑↓←→</span> Déplacer le vaisseau</li>
-                            <li><span class="key">Souris</span> Regarder autour</li>
-                            <li><span class="key">Clic droit</span> Mode boost</li>
-                            <li><span class="key">Espace</span> Monter</li>
-                            <li><span class="key">C</span> Descendre</li>
-                            <li><span class="key">Clic gauche</span> Interagir</li>
-                            <li><span class="key">?</span> Bouton d'aide (en haut à droite)</li>
+                            <li><span class="key">↑↓←→</span> Move the spaceship</li>
+                            <li><span class="key">Mouse</span> Look around</li>
+                            <li><span class="key">Right click</span> Boost mode</li>
+                            <li><span class="key">Space</span> Go up</li>
+                            <li><span class="key">C</span> Go down</li>
+                            <li><span class="key">Left click</span> Interact</li>
+                            <li><span class="key">?</span> Help button (top right)</li>
                         </ul>
                     </div>
                     <div>
-                        <h3>📱 Contrôles - Mobile</h3>
+                        <h3>📱 Controls - Mobile</h3>
                         <ul style="list-style: none; padding: 0;">
-                            <li>👆 <strong>Glisser</strong> : Regarder autour</li>
-                            <li>🎯 <strong>Approche</strong> : Auto-interaction</li>
-                            <li>📊 <strong>Interface</strong> : Adaptative</li>
+                            <li>👆 <strong>Swipe</strong>: Look around</li>
+                            <li>🎯 <strong>Approach</strong>: Auto-interaction</li>
+                            <li>📊 <strong>Interface</strong>: Adaptive</li>
                         </ul>
-                        
-                        <h3>🎛️ Interface Cockpit</h3>
+
+                        <h3>🎛️ Cockpit Interface</h3>
                         <ul style="list-style: none; padding: 0; font-size: 12px;">
-                            <li><strong>Vitesse</strong> : Déplacement actuel</li>
-                            <li><strong>Moteur</strong> : IDLE/NORMAL/BOOST</li>
-                            <li><strong>Position</strong> : Coordonnées X,Y,Z</li>
-                            <li><strong>Cible</strong> : Planète la plus proche</li>
+                            <li><strong>Speed</strong>: Current movement</li>
+                            <li><strong>Engine</strong>: IDLE/NORMAL/BOOST</li>
+                            <li><strong>Position</strong>: X,Y,Z coordinates</li>
+                            <li><strong>Target</strong>: Nearest planet</li>
                         </ul>
                     </div>
                 </div>
-                
-                <h3>🪐 Planètes à explorer</h3>
+
+                <h3>🪐 Planets to Explore</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
                     <div class="planet-guide">
                         <span style="font-size: 20px;">🔥</span>
-                        <strong>Mercure</strong><br>
-                        <small>À propos & Présentation</small>
+                        <strong>Mercury</strong><br>
+                        <small>About & Introduction</small>
                     </div>
                     <div class="planet-guide">
                         <span style="font-size: 20px;">🌅</span>
-                        <strong>Vénus</strong><br>
-                        <small>Compétences techniques</small>
+                        <strong>Venus</strong><br>
+                        <small>Technical skills</small>
                     </div>
                     <div class="planet-guide">
                         <span style="font-size: 20px;">🌍</span>
-                        <strong>Terre</strong><br>
-                        <small>Projets principaux</small>
+                        <strong>Earth</strong><br>
+                        <small>Main projects</small>
                     </div>
                     <div class="planet-guide">
                         <span style="font-size: 20px;">🔴</span>
                         <strong>Mars</strong><br>
-                        <small>Expérience professionnelle</small>
+                        <small>Professional experience</small>
                     </div>
                     <div class="planet-guide">
                         <span style="font-size: 20px;">🌪️</span>
                         <strong>Jupiter</strong><br>
-                        <small>Formations & certifications</small>
+                        <small>Education & certifications</small>
                     </div>
                     <div class="planet-guide">
                         <span style="font-size: 20px;">💍</span>
-                        <strong>Saturne</strong><br>
-                        <small>Contact & liens</small>
+                        <strong>Saturn</strong><br>
+                        <small>Contact & links</small>
                     </div>
                 </div>
-                
+
                 <div style="margin-top: 25px; padding: 15px; background: rgba(0, 255, 255, 0.1); border-radius: 8px; border: 1px solid #00ffff;">
-                    <h3>💡 Conseils d'exploration</h3>
+                    <h3>💡 Exploration Tips</h3>
                     <ul>
-                        <li>🎯 <strong>Navigation</strong> : Approchez-vous des planètes pour déclencher l'interaction</li>
-                        <li>⚡ <strong>Boost</strong> : Maintenez Shift pour voyager plus rapidement</li>
-                        <li>🔄 <strong>Caméra</strong> : Cliquez pour verrouiller/déverrouiller la vue</li>
-                        <li>📱 <strong>Mobile</strong> : Interface optimisée avec contrôles tactiles</li>
-                        <li>🎮 <strong>Immersion</strong> : Ressentez les vibrations du moteur !</li>
+                        <li>🎯 <strong>Navigation</strong>: Get closer to planets to trigger interaction</li>
+                        <li>⚡ <strong>Boost</strong>: Hold Shift to travel faster</li>
+                        <li>🔄 <strong>Camera</strong>: Click to lock/unlock the view</li>
+                        <li>📱 <strong>Mobile</strong>: Optimized interface with touch controls</li>
+                        <li>🎮 <strong>Immersion</strong>: Feel the engine vibrations!</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Écran de chargement -->
+    <!-- Loading screen -->
     <div id="loading-screen">
         <div class="loading-content">
-            <h1>INITIALISATION DU SYSTÈME</h1>
+            <h1>SYSTEM INITIALIZATION</h1>
             <div class="loading-bar">
                 <div class="loading-progress" id="loading-progress"></div>
             </div>
-            <div class="loading-text" id="loading-text">Chargement des ressources...</div>
+            <div class="loading-text" id="loading-text">Loading resources...</div>
         </div>
     </div>
 
@@ -225,12 +225,12 @@
     }
     </script>
     
-    <!-- Fallback script en cas d'échec de l'importmap -->
+    <!-- Fallback script in case importmap fails -->
     <script>
-        // Détection d'erreur de chargement
+        // Loading error detection
         window.addEventListener('error', function(e) {
             if (e.filename && e.filename.includes('three')) {
-                console.error('Erreur de chargement Three.js:', e);
+                console.error('Three.js loading error:', e);
                 showFallbackError();
             }
         });
@@ -240,42 +240,42 @@
             if (loadingText) {
                 loadingText.innerHTML = `
                     <div style="color: #ff6666; text-align: center;">
-                        <p>❌ Erreur de chargement des ressources 3D</p>
+                        <p>❌ Failed to load 3D resources</p>
                         <p style="font-size: 12px; margin-top: 10px;">
-                            Vérifiez votre connexion internet et rechargez la page
+                            Check your internet connection and reload the page
                         </p>
                         <button onclick="location.reload()" style="
-                            background: #00ffff; 
-                            color: #000; 
-                            border: none; 
-                            padding: 10px 20px; 
-                            border-radius: 5px; 
+                            background: #00ffff;
+                            color: #000;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 5px;
                             margin-top: 15px;
                             cursor: pointer;
                         ">
-                            🔄 Recharger
+                            🔄 Reload
                         </button>
                     </div>
                 `;
             }
         }
 
-        // Vérification du support de base
+        // Basic support check
         if (!window.WebGLRenderingContext) {
             showFallbackError();
         }
-        
-        // Fonction pour le modal d'aide
+
+        // Help modal function
         function toggleHelpModal() {
             const helpModal = document.getElementById('help-modal');
             if (helpModal) {
                 helpModal.style.display = helpModal.style.display === 'block' ? 'none' : 'block';
             }
         }
-        
-        // Raccourci clavier pour fermer les modaux
+
+        // Keyboard shortcut to close modals
         document.addEventListener('keydown', function(event) {
-            // Fermer avec Échap
+            // Close with Escape
             if (event.key === 'Escape') {
                 const helpModal = document.getElementById('help-modal');
                 if (helpModal && helpModal.style.display === 'block') {
@@ -283,19 +283,19 @@
                 }
             }
         });
-        
-        // Fermer le modal en cliquant à l'extérieur
+
+        // Close modal by clicking outside
         window.addEventListener('click', function(event) {
             const helpModal = document.getElementById('help-modal');
             if (event.target === helpModal) {
                 helpModal.style.display = 'none';
             }
         });
-        
-        // Empêcher le pointer lock quand un modal est ouvert
+
+        // Prevent pointer lock when a modal is open
         document.addEventListener('click', function(event) {
-            // Si on clique sur le modal de bienvenue ou ses enfants, ne pas propager
-            if (event.target.closest('#welcome-modal') || 
+            // If clicking on the welcome modal or its children, stop propagation
+            if (event.target.closest('#welcome-modal') ||
                 event.target.closest('.welcome-modal') ||
                 event.target.closest('.modal[style*="display: block"]')) {
                 event.stopPropagation();

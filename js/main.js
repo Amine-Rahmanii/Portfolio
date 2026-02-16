@@ -4,15 +4,15 @@ import SolarSystem from './SolarSystem.js';
 import InteractionManager from './InteractionManager.js';
 import { ENVIRONMENT_CONFIG } from './config.js';
 
-// Gestion globale des erreurs
+// Global error handling
 window.addEventListener('unhandledrejection', function(event) {
-    console.error('Erreur non gérée:', event.reason);
+    console.error('Unhandled error:', event.reason);
     const loadingText = document.getElementById('loading-text');
     if (loadingText) {
         loadingText.innerHTML = `
             <div style="color: #ff6666;">
-                ❌ Erreur de chargement: ${event.reason?.message || 'Erreur inconnue'}
-                <br><button onclick="location.reload()" style="margin-top: 10px; padding: 5px 15px; background: #00ffff; color: #000; border: none; border-radius: 3px; cursor: pointer;">Recharger</button>
+                ❌ Loading error: ${event.reason?.message || 'Unknown error'}
+                <br><button onclick="location.reload()" style="margin-top: 10px; padding: 5px 15px; background: #00ffff; color: #000; border: none; border-radius: 3px; cursor: pointer;">Reload</button>
             </div>
         `;
     }
@@ -21,15 +21,15 @@ window.addEventListener('unhandledrejection', function(event) {
 
 class SpacePortfolio {
     constructor() {
-        // Détection mobile
+        // Mobile detection
         this.isMobile = this.detectMobile();
-        
-        // Timeout de chargement
+
+        // Loading timeout
         this.loadingTimeout = setTimeout(() => {
-            this.showError('Le chargement prend trop de temps. Vérifiez votre connexion internet.');
-        }, 30000); // 30 secondes
-        
-        // Éléments DOM
+            this.showError('Loading is taking too long. Please check your internet connection.');
+        }, 30000); // 30 seconds
+
+        // DOM elements
         this.container = document.body;
         this.loadingScreen = document.getElementById('loading-screen');
         this.loadingProgress = document.getElementById('loading-progress');
@@ -41,12 +41,12 @@ class SpacePortfolio {
         this.renderer = null;
         this.clock = new THREE.Clock();
         
-        // Composants du jeu
+        // Game components
         this.controls = null;
         this.solarSystem = null;
         this.interactionManager = null;
         
-        // État
+        // State
         this.isLoaded = false;
         this.loadingProgressValue = 0;
         
@@ -56,16 +56,16 @@ class SpacePortfolio {
     detectMobile() {
         const userAgent = navigator.userAgent || navigator.vendor || window.opera;
         
-        // Détection spécifique iOS
+        // iOS-specific detection
         const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
         
-        // Détection Android
+        // Android detection
         const isAndroid = /android/i.test(userAgent);
         
-        // Détection générale mobile
+        // General mobile detection
         const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
         
-        // Détection par taille d'écran et support tactile
+        // Detection by screen size and touch support
         const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         const isSmallScreen = window.innerWidth <= 768;
         
@@ -74,7 +74,7 @@ class SpacePortfolio {
     
     setupMobileInterface() {
         if (this.isMobile) {
-            // Afficher les contrôles mobiles
+            // Show mobile controls
             const mobileControls = document.querySelector('.mobile-controls');
             const desktopControls = document.getElementById('controls-info');
             
@@ -85,24 +85,24 @@ class SpacePortfolio {
                 desktopControls.style.display = 'none';
             }
             
-            // Ajuster la qualité de rendu pour mobile
+            // Adjust render quality for mobile
             if (this.renderer) {
                 this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
                 
-                // Réduire la résolution sur mobile pour de meilleures performances
+                // Reduce resolution on mobile for better performance
                 const canvas = this.renderer.domElement;
                 const rect = canvas.getBoundingClientRect();
                 this.renderer.setSize(rect.width * 0.8, rect.height * 0.8, false);
             }
             
-            // Désactiver les effets visuels coûteux sur mobile
+            // Disable expensive visual effects on mobile
             if (this.solarSystem && this.solarSystem.stars) {
                 this.solarSystem.stars.visible = false;
             }
             
-            // Ajuster les contrôles pour touch
+            // Adjust controls for touch
             if (this.controls) {
-                this.controls.mouseSensitivity *= 0.7; // Réduire la sensibilité tactile
+                this.controls.mouseSensitivity *= 0.7; // Reduce touch sensitivity
             }
         }
     }
@@ -119,40 +119,40 @@ class SpacePortfolio {
     
     async init() {
         try {
-            // Vérifier le support WebGL
+            // Check WebGL support
             if (!this.checkWebGLSupport()) {
-                this.showError("WebGL n'est pas supporté sur cet appareil. Veuillez utiliser un navigateur compatible.");
+                this.showError("WebGL is not supported on this device. Please use a compatible browser.");
                 return;
             }
-            
-            this.showLoading("Initialisation du moteur 3D...");
+
+            this.showLoading("Initializing 3D engine...");
             await this.initThreeJS();
-            
-            this.showLoading("Création du système solaire...");
+
+            this.showLoading("Creating solar system...");
             await this.initSolarSystem();
-            
-            this.showLoading("Configuration des contrôles...");
+
+            this.showLoading("Configuring controls...");
             await this.initControls();
-            
-            this.showLoading("Préparation de l'interface...");
+
+            this.showLoading("Preparing interface...");
             await this.initInteractions();
-            
-            this.showLoading("Finalisation...");
+
+            this.showLoading("Finalizing...");
             await this.finishLoading();
             
             this.startRenderLoop();
             
         } catch (error) {
-            console.error('Erreur lors de l\'initialisation:', error);
-            this.showError('Erreur lors du chargement du portfolio');
+            console.error('Initialization error:', error);
+            this.showError('Error loading the portfolio');
         }
     }
     
     async initThreeJS() {
-        // Scène
+        // Scene
         this.scene = new THREE.Scene();
         
-        // Caméra
+        // Camera
         this.camera = new THREE.PerspectiveCamera(
             75,
             window.innerWidth / window.innerHeight,
@@ -161,36 +161,36 @@ class SpacePortfolio {
         );
         this.camera.position.set(0, 50, 100);
         
-        // Renderer avec optimisations iOS
+        // Renderer with iOS optimizations
         this.renderer = new THREE.WebGLRenderer({ 
-            antialias: !this.isMobile, // Désactiver antialiasing sur mobile
-            alpha: false, // Pas de transparence pour de meilleures performances
+            antialias: !this.isMobile, // Disable antialiasing on mobile
+            alpha: false, // No transparency for better performance
             powerPreference: this.isMobile ? "low-power" : "high-performance",
-            failIfMajorPerformanceCaveat: false // Permettre WebGL même si performances réduites
+            failIfMajorPerformanceCaveat: false // Allow WebGL even with reduced performance
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         
-        // Configuration pixelRatio pour iOS
+        // pixelRatio configuration for iOS
         if (this.isMobile) {
             this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         } else {
             this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         }
         
-        // Désactiver les ombres sur mobile pour de meilleures performances
+        // Disable shadows on mobile for better performance
         this.renderer.shadowMap.enabled = !this.isMobile;
         if (!this.isMobile) {
             this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         }
         
-        // Couleur de fond et brouillard
+        // Background color and fog
         const fogConfig = ENVIRONMENT_CONFIG.fog;
         this.scene.background = new THREE.Color(fogConfig.color);
         this.scene.fog = new THREE.Fog(fogConfig.color, fogConfig.near, fogConfig.far);
         
         this.container.appendChild(this.renderer.domElement);
         
-        // Gestion du redimensionnement
+        // Resize handling
         window.addEventListener('resize', () => this.onWindowResize());
         
         await this.delay(300);
@@ -212,7 +212,7 @@ class SpacePortfolio {
     }
     
     async finishLoading() {
-        // Nettoyer le timeout
+        // Clear timeout
         if (this.loadingTimeout) {
             clearTimeout(this.loadingTimeout);
         }
@@ -222,15 +222,15 @@ class SpacePortfolio {
         this.hideLoading();
         this.isLoaded = true;
         
-        // Afficher le message de bienvenue après un court délai
+        // Show welcome message after a short delay
         setTimeout(() => {
             this.showWelcomeMessage();
         }, 2000);
     }
     
     showWelcomeMessage() {
-        // Afficher le message de bienvenue à chaque chargement
-        // Désactiver temporairement les contrôles
+        // Show welcome message on every load
+        // Temporarily disable controls
         if (this.controls) {
             this.controls.disableControls();
         }
@@ -257,16 +257,16 @@ class SpacePortfolio {
         `;
         
         welcomeDiv.innerHTML = `
-            <h2 style="margin-bottom: 20px; color: #00aaff;">🚀 Bienvenue, Explorateur !</h2>
+            <h2 style="margin-bottom: 20px; color: #00aaff;">🚀 Welcome, Explorer!</h2>
             <p style="margin-bottom: 15px; line-height: 1.5;">
-                Vous êtes maintenant aux commandes d'un vaisseau spatial.
-                Utilisez les <strong>flèches directionnelles</strong> pour vous déplacer, le <strong>clic droit</strong> pour accélérer et approchez-vous des planètes !
+                You are now at the controls of a spaceship.
+                Use the <strong>arrow keys</strong> to move, <strong>right click</strong> to boost, and get closer to the planets!
             </p>
             <p style="margin-bottom: 20px; line-height: 1.5; color: #ffaa00;">
-                🌍 <strong>Explorez les planètes pour découvrir mon portfolio !</strong>
+                🌍 <strong>Explore the planets to discover my portfolio!</strong>
             </p>
             <p style="margin-bottom: 20px; font-size: 14px; color: #ffaa00;">
-                💡 Cliquez sur le <strong>?</strong> en haut à droite pour obtenir de l'aide
+                💡 Click the <strong>?</strong> button in the top right for help
             </p>
             <button id="start-exploration" style="
                 background: #00ffff;
@@ -277,11 +277,11 @@ class SpacePortfolio {
                 cursor: pointer;
                 font-weight: bold;
             ">
-                🎮 Commencer l'exploration
+                🎮 Start Exploration
             </button>
         `;
         
-        // Ajouter un overlay pour empêcher les clics en dehors
+        // Add overlay to prevent clicks outside
         const overlay = document.createElement('div');
         overlay.style.cssText = `
             position: fixed;
@@ -297,22 +297,22 @@ class SpacePortfolio {
         document.body.appendChild(overlay);
         document.body.appendChild(welcomeDiv);
         
-        // Gérer le clic sur le bouton
+        // Handle button click
         document.getElementById('start-exploration').addEventListener('click', () => {
             welcomeDiv.remove();
             overlay.remove();
             
-            // Réactiver les contrôles et forcer le pointer lock
+            // Re-enable controls and force pointer lock
             if (this.controls) {
                 this.controls.enableControls();
-                // Attendre un peu puis forcer le pointer lock
+                // Wait a bit then force pointer lock
                 setTimeout(() => {
                     this.controls.forcePointerLock();
                 }, 100);
             }
         });
         
-        // Ajouter l'animation CSS
+        // Add CSS animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeIn {
@@ -331,12 +331,12 @@ class SpacePortfolio {
             
             const deltaTime = this.clock.getDelta();
             
-            // Mise à jour des composants
+            // Update components
             this.controls.update(deltaTime);
             this.solarSystem.update(deltaTime);
             this.interactionManager.update();
             
-            // Rendu
+            // Render
             this.renderer.render(this.scene, this.camera);
         };
         
@@ -381,12 +381,12 @@ class SpacePortfolio {
                 <div style="color: #ff6666; text-align: center;">
                     <p>❌ ${message}</p>
                     <div style="margin-top: 15px; font-size: 12px;">
-                        <p>Solutions possibles :</p>
+                        <p>Possible solutions:</p>
                         <ul style="list-style: none; padding: 0; margin: 10px 0;">
-                            <li>• Vérifiez votre connexion internet</li>
-                            <li>• Utilisez un navigateur récent</li>
-                            <li>• Activez JavaScript</li>
-                            <li>• Rechargez la page</li>
+                            <li>• Check your internet connection</li>
+                            <li>• Use a modern browser</li>
+                            <li>• Enable JavaScript</li>
+                            <li>• Reload the page</li>
                         </ul>
                         <button onclick="location.reload()" style="
                             background: #00ffff; 
@@ -397,14 +397,14 @@ class SpacePortfolio {
                             cursor: pointer;
                             margin-top: 10px;
                         ">
-                            🔄 Recharger la page
+                            🔄 Reload Page
                         </button>
                     </div>
                 </div>
             `;
         }
         
-        // Cacher la barre de progression en cas d'erreur
+        // Hide progress bar on error
         if (this.loadingProgress) {
             this.loadingProgress.style.background = '#ff0000';
         }
@@ -414,7 +414,7 @@ class SpacePortfolio {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     
-    // Méthodes publiques pour l'interaction externe
+    // Public methods for external interaction
     navigateToPlanet(planetName) {
         if (this.interactionManager) {
             this.interactionManager.navigateToPlanet(planetName, this.camera, this.controls);
@@ -436,14 +436,14 @@ class SpacePortfolio {
     }
 }
 
-// Initialisation automatique au chargement de la page
+// Auto-initialization on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // Correction pour l'accès à la barre de progression
+    // Fix for progress bar access
     const loadingProgressBar = document.getElementById('loading-progress');
     
     window.spacePortfolio = new SpacePortfolio();
     
-    // Exposer les méthodes publiques
+    // Expose public methods
     window.navigateToPlanet = (planetName) => {
         window.spacePortfolio.navigateToPlanet(planetName);
     };
@@ -452,9 +452,9 @@ document.addEventListener('DOMContentLoaded', () => {
         window.spacePortfolio.openPlanetInfo(planetName);
     };
     
-    // Messages de débogage
-    console.log('🚀 Portfolio Spatial initialisé');
-    console.log('Contrôles: WASD pour se déplacer, Souris pour regarder, Shift pour accélérer, E pour interagir');
+    // Debug messages
+    console.log('🚀 Space Portfolio initialized');
+    console.log('Controls: WASD to move, Mouse to look, Shift to boost, E to interact');
 });
 
 export default SpacePortfolio;

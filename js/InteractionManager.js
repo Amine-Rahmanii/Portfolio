@@ -116,7 +116,7 @@ class InteractionManager {
     
     hideInteractionPrompt() {
         this.interactionPrompt.style.display = 'none';
-        this.targetName.textContent = 'Aucune';
+        this.targetName.textContent = 'None';
         this.targetDistance.textContent = '-- km';
     }
     
@@ -129,8 +129,8 @@ class InteractionManager {
         this.modalTitle.textContent = content.title;
         this.modalBody.innerHTML = content.description;
         
-        // Si la planète est Terre (section Projets), injecter dynamiquement les projets GitHub manquants
-        if (planet.name === 'Terre') {
+        // If the planet is Earth (Projects section), dynamically inject missing GitHub projects
+        if (planet.name === 'Earth') {
             this.injectGitHubProjects({ username: 'Amine-Rahmanii' });
         }
         

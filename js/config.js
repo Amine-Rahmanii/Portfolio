@@ -1,8 +1,8 @@
-// Configuration du systÃƒÂ¨me solaire
+// Solar system configuration
 export const SOLAR_SYSTEM_CONFIG = {
-    // Soleil au centre
+    // Sun at the center
     sun: {
-        name: "Soleil",
+        name: "Sun",
         position: [0, 0, 0],
         radius: 50,
         color: 0xffaa00,
@@ -10,11 +10,11 @@ export const SOLAR_SYSTEM_CONFIG = {
         intensity: 1.5
     },
     
-    // PlanÃƒÂ¨tes avec leurs sections portfolio
+    // Planets with their portfolio sections
     planets: [
         {
-            name: "Mercure",
-            section: "PrÃƒÂ©sentation",
+            name: "Mercury",
+            section: "About",
             position: [200, 0, 0],
             orbitRadius: 200,
             radius: 8,
@@ -26,32 +26,32 @@ export const SOLAR_SYSTEM_CONFIG = {
             atmosphere: false,
             rings: false,
             content: {
-                title: "Présentation - Amine Rahmani",
+                title: "About - Amine Rahmani",
                 description: `
-                    <h3>👋 Bonjour, je suis Amine Rahmani</h3>
-                    <p>Digital native passionné par les nouvelles technologies, le design, l'ingénierie et l'entrepreneuriat.</p>
-                    
-                    <h3>🌟 Ma Mission</h3>
-                    <p>Transformer des idées créatives en solutions digitales innovantes, en combinant vision stratégique et expertise technique pour créer des expériences utilisateur exceptionnelles.</p>
+                    <h3>👋 Hi, I'm Amine Rahmani</h3>
+                    <p>Digital native passionate about new technologies, design, engineering, and entrepreneurship.</p>
+
+                    <h3>🌟 My Mission</h3>
+                    <p>Turning creative ideas into innovative digital solutions, combining strategic vision and technical expertise to create outstanding user experiences.</p>
 
                     <h3>📞 Contact</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">📞 <strong>Téléphone :</strong> +33 7 82 75 43 54</li>
-                        <li style="padding: 5px 0;">📧 <strong>Email :</strong> amine.rahmani21@neoma-bs.com</li>
+                        <li style="padding: 5px 0;">📞 <strong>Phone:</strong> +33 7 82 75 43 54</li>
+                        <li style="padding: 5px 0;">📧 <strong>Email:</strong> amine.rahmani21@neoma-bs.com</li>
                     </ul>
 
-                    <h3>🌍 Langues</h3>
+                    <h3>🌍 Languages</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">🌍 <strong>Français :</strong> Natif</li>
-                        <li style="padding: 5px 0;">🌍 <strong>Anglais :</strong> Avancé</li>
-                        <li style="padding: 5px 0;">🌍 <strong>Espagnol :</strong> Intermédiaire</li>
+                        <li style="padding: 5px 0;">🌍 <strong>French:</strong> Native</li>
+                        <li style="padding: 5px 0;">🌍 <strong>English:</strong> Advanced</li>
+                        <li style="padding: 5px 0;">🌍 <strong>Spanish:</strong> Intermediate</li>
                     </ul>
                 `
             }
         },
         {
-            name: "Vénus",
-            section: "Formation",
+            name: "Venus",
+            section: "Education",
             position: [300, 0, 0],
             orbitRadius: 300,
             radius: 12,
@@ -64,42 +64,42 @@ export const SOLAR_SYSTEM_CONFIG = {
             atmosphereColor: 0xffaa00,
             rings: false,
             content: {
-                title: "Formation & Parcours Académique",
+                title: "Education & Academic Background",
                 description: `
                     <p style="margin-bottom: 20px; color: #cccccc; font-style: italic;">
-                        Mon parcours académique m'a permis d'acquérir une solide base en management digital et en technologies émergentes, 
-                        alliant vision stratégique et expertise technique pour créer des solutions innovantes.
+                        My academic journey has given me a solid foundation in digital management and emerging technologies,
+                        combining strategic vision and technical expertise to create innovative solutions.
                     </p>
 
-                    <h3>🌟 Formation Actuelle</h3>
+                    <h3>🌟 Current Education</h3>
                     <div style="background: rgba(0,170,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
                         <h4 style="color: #00aaff; margin: 0 0 10px 0;">NEOMA BUSINESS SCHOOL</h4>
                         <p style="margin: 5px 0;"><strong>Master TEMA</strong></p>
-                        <p style="margin: 5px 0;">Digital Management, 4ème année</p>
+                        <p style="margin: 5px 0;">Digital Management, 4th year</p>
                         <p style="margin: 5px 0; color: #ffaa00;"><em>2021 - 2026</em></p>
                         <p style="margin: 10px 0 0 0; font-size: 0.9em; color: #aaaaaa;">
-                            Formation spécialisée en management digital et technologies émergentes, 
-                            combinant vision stratégique et innovation technologique pour les entreprises de demain.
+                            Specialized program in digital management and emerging technologies,
+                            combining strategic vision and technological innovation for the businesses of tomorrow.
                         </p>
                     </div>
 
-                    <h3>🌟 Formation Précédente</h3>
+                    <h3>🌟 Previous Education</h3>
                     <div style="background: rgba(255,170,0,0.1); padding: 15px; border-left: 4px solid #ffaa00; margin: 10px 0;">
                         <h4 style="color: #ffaa00; margin: 0 0 10px 0;">EFREI PARIS</h4>
-                        <p style="margin: 5px 0;"><strong>Semestre d'immersion Ingénierie</strong></p>
-                        <p style="margin: 5px 0;">Marketing & Data, 2ème année</p>
+                        <p style="margin: 5px 0;"><strong>Engineering Immersion Semester</strong></p>
+                        <p style="margin: 5px 0;">Marketing & Data, 2nd year</p>
                         <p style="margin: 5px 0; color: #00aaff;"><em>2022</em></p>
                         <p style="margin: 10px 0 0 0; font-size: 0.9em; color: #aaaaaa;">
-                            École d'ingénierie renommée offrant une formation technique solide 
-                            avec une spécialisation en marketing digital et analyse de données.
+                            Renowned engineering school offering a solid technical education
+                            with a specialization in digital marketing and data analysis.
                         </p>
                     </div>
                 `
             }
         },
         {
-            name: "Terre",
-            section: "Projets",
+            name: "Earth",
+            section: "Projects",
             position: [400, 0, 0],
             orbitRadius: 400,
             radius: 15,
@@ -114,10 +114,10 @@ export const SOLAR_SYSTEM_CONFIG = {
             continents: true,
             clouds: true,
                 content: {
-                title: "Mes Projets",
+                title: "My Projects",
                 description: `
                           <h3>🌟 AI Cost Prediction System</h3>
-                          <p>Système d'intelligence artificielle pour la prédiction des coûts de projets d'ingénierie avec une précision de 85%+. Utilise Random Forest et des algorithmes de machine learning avancés pour analyser 3,245 projets et identifier les 15+ facteurs les plus influents dans la variation des coûts.</p>
+                          <p>Artificial intelligence system for engineering project cost prediction with 85%+ accuracy. Uses Random Forest and advanced machine learning algorithms to analyze 3,245 projects and identify the 15+ most influential factors in cost variation.</p>
                           <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
                                 <a href="https://github.com/Amine-Rahmanii/ai-cost-prediction-system" target="_blank" 
                                     style="background: linear-gradient(45deg, #333, #555); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
@@ -129,8 +129,8 @@ export const SOLAR_SYSTEM_CONFIG = {
                                 </a>
                           </div>
 
-                          <h3>🌟 Analyse de Sentiment NVIDIA</h3>
-                          <p>Application web d'analyse de sentiment en temps réel utilisant l'IA et le machine learning. Interface Streamlit interactive pour analyser les opinions et émotions dans les textes.</p>
+                          <h3>🌟 NVIDIA Sentiment Analysis</h3>
+                          <p>Real-time sentiment analysis web application using AI and machine learning. Interactive Streamlit interface for analyzing opinions and emotions in text.</p>
                           <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
                                 <a href="https://nvidia-sentiment-analysiss.streamlit.app/" target="_blank" 
                                     style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
@@ -142,8 +142,8 @@ export const SOLAR_SYSTEM_CONFIG = {
                                 </a>
                           </div>
 
-                          <h3>🌟 Classificateur d'Instruments Financiers</h3>
-                          <p>Application de machine learning pour la classification automatique d'instruments financiers. Utilise des algorithmes d'IA pour analyser et catégoriser différents types d'actifs financiers avec une interface Streamlit intuitive.</p>
+                          <h3>🌟 Financial Instruments Classifier</h3>
+                          <p>Machine learning application for automatic classification of financial instruments. Uses AI algorithms to analyze and categorize different types of financial assets with an intuitive Streamlit interface.</p>
                           <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
                                 <a href="https://financialinstrumentsclassifier.streamlit.app/" target="_blank" 
                                     style="background: linear-gradient(45deg, #ff6b35, #f7931e); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
@@ -156,7 +156,7 @@ export const SOLAR_SYSTEM_CONFIG = {
                           </div>
                     
                           <h3>Customer 360 Dashboard</h3>
-                          <p>Dashboard interactif explorant les donn&eacute;es e-commerce br&eacute;siliennes (Olist) pour suivre les KPI client 360&deg;, performances logistiques et satisfaction.</p>
+                          <p>Interactive dashboard exploring Brazilian e-commerce data (Olist) to track 360&deg; customer KPIs, logistics performance, and satisfaction.</p>
                           <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
                                 <a href="https://amine-rahmanii-customer-360-dashboard-app-rtzbsx.streamlit.app/" target="_blank"
                                     style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
@@ -168,8 +168,8 @@ export const SOLAR_SYSTEM_CONFIG = {
                                 </a>
                           </div>
                     
-                          <h3>Suivi des Tickets Service Client</h3>
-                          <p>Intégration Salesforce Service Cloud &amp; Jira pour synchroniser les tickets, automatiser les workflows support et fournir un reporting centralisé.</p>
+                          <h3>Customer Service Ticket Tracking</h3>
+                          <p>Salesforce Service Cloud &amp; Jira integration to synchronize tickets, automate support workflows, and provide centralized reporting.</p>
                           <div style="margin: 10px 0; display: flex; gap: 10px; flex-wrap: wrap;">
                                 <a href="https://amine-rahmanii-suivi-des-tickets-service-client-int--app-z0e2us.streamlit.app/" target="_blank"
                                     style="background: linear-gradient(45deg, #76b900, #007fff); color: white; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; font-weight: bold;">
@@ -181,18 +181,18 @@ export const SOLAR_SYSTEM_CONFIG = {
                                 </a>
                           </div>
                     
-                    <h3>🌟 Projets de Recherche & Développement</h3>
+                    <h3>🌟 Research & Development Projects</h3>
                     <div style="background: rgba(128,0,255,0.1); padding: 15px; border-left: 4px solid #8000ff; margin: 10px 0;">
-                        <h4 style="color: #8000ff; margin: 0 0 10px 0;">Intelligence Artificielle & Prédiction</h4>
+                        <h4 style="color: #8000ff; margin: 0 0 10px 0;">Artificial Intelligence & Prediction</h4>
                         <ul style="margin: 10px 0; color: #cccccc;">
-                            <li><strong>🌐 Prédiction des Coûts par IA :</strong> Système IA avec 85%+ de précision utilisant Random Forest sur 3,245 projets d'ingénierie</li>
-                            <li><strong>🌐 Analyse Prédictive :</strong> Identification de 15+ facteurs influents dans la variation des coûts de projets</li>
-                            <li><strong>🌐 Modèles Supervisés :</strong> Implémentation de Random Forest, Gradient Boosting pour la prédiction de prix d'actifs</li>
-                            <li><strong>🌐 Feature Engineering :</strong> Création d'indicateurs techniques et transformation de données financières</li>
-                            <li><strong>🌐 Évaluation de Performance :</strong> Métriques MAE, RMSE, R² pour optimiser les résultats</li>
+                            <li><strong>🌐 AI Cost Prediction:</strong> AI system with 85%+ accuracy using Random Forest on 3,245 engineering projects</li>
+                            <li><strong>🌐 Predictive Analytics:</strong> Identification of 15+ influential factors in project cost variation</li>
+                            <li><strong>🌐 Supervised Models:</strong> Implementation of Random Forest, Gradient Boosting for asset price prediction</li>
+                            <li><strong>🌐 Feature Engineering:</strong> Creation of technical indicators and financial data transformation</li>
+                            <li><strong>🌐 Performance Evaluation:</strong> MAE, RMSE, R² metrics to optimize results</li>
                         </ul>
 
-                        <h4 style="color: #8000ff; margin: 15px 0 10px 0;">Technologies Utilisées :</h4>
+                        <h4 style="color: #8000ff; margin: 15px 0 10px 0;">Technologies Used:</h4>
                         <p style="color: #cccccc; margin: 5px 0;">
                             <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">Python</span>
                             <span style="background: rgba(128,0,255,0.2); padding: 3px 8px; border-radius: 3px; margin: 2px;">Pandas</span>
@@ -203,15 +203,15 @@ export const SOLAR_SYSTEM_CONFIG = {
                         </p>
                     </div>
                     
-                    <h3>Portfolio Spatial Interactif</h3>
-                    <p>Application 3D immersive utilisant Three.js pour explorer un système solaire portfolio. Navigation en vaisseau spatial avec interface futuriste.</p>
+                    <h3>Interactive Space Portfolio</h3>
+                    <p>Immersive 3D application using Three.js to explore a solar system portfolio. Spaceship navigation with a futuristic interface.</p>
 
                 `
             }
         },
         {
             name: "Mars",
-            section: "Expériences",
+            section: "Experience",
             position: [550, 0, 0],
             orbitRadius: 550,
             radius: 13,
@@ -225,48 +225,48 @@ export const SOLAR_SYSTEM_CONFIG = {
             rings: false,
             polarCaps: true,
             content: {
-                title: "Expériences Professionnelles",
+                title: "Professional Experience",
                 description: `
-                    <h3>🌟 Assistant Gestion</h3>
+                    <h3>🌟 Management Assistant</h3>
                     <div style="background: rgba(0,170,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
                         <h4 style="color: #00aaff; margin: 0 0 10px 0;">RAMAFRUITS - Ris-Orangis</h4>
-                        <p style="margin: 5px 0; color: #ffaa00;"><em>Février 2025 - Août 2025</em></p>
-                        
-                        <h5 style="color: #00aaff;">Missions principales :</h5>
+                        <p style="margin: 5px 0; color: #ffaa00;"><em>February 2025 - August 2025</em></p>
+
+                        <h5 style="color: #00aaff;">Key responsibilities:</h5>
                         <ul style="margin: 10px 0;">
-                            <li><strong>Pilotage logistique :</strong> Gestion des stocks et commandes fournisseurs</li>
-                            <li><strong>Appui organisationnel :</strong> Optimisation des tournées et processus</li>
-                            <li><strong>Analyse commerciale :</strong> Suivi des ventes et relation client</li>
-                            <li><strong>Gestion financière :</strong> Suivi trésorerie et reporting expert-comptable</li>
-                            <li><strong>Stratégie RSE :</strong> Initiatives anti-gaspillage et développement durable</li>
+                            <li><strong>Logistics management:</strong> Inventory and supplier order management</li>
+                            <li><strong>Organizational support:</strong> Route and process optimization</li>
+                            <li><strong>Business analysis:</strong> Sales tracking and customer relations</li>
+                            <li><strong>Financial management:</strong> Cash flow monitoring and accounting reporting</li>
+                            <li><strong>CSR strategy:</strong> Anti-waste initiatives and sustainable development</li>
                         </ul>
                     </div>
-                    
+
                     <h3>🌟 Executive Assistant</h3>
                     <div style="background: rgba(255,170,0,0.1); padding: 15px; border-left: 4px solid #ffaa00; margin: 10px 0;">
                         <h4 style="color: #ffaa00; margin: 0 0 10px 0;">OMNYE STUDIO - Paris</h4>
-                        <p style="margin: 5px 0; color: #00aaff;"><em>Juin 2023 - Décembre 2023</em></p>
-                        
-                        <h5 style="color: #ffaa00;">Missions :</h5>
+                        <p style="margin: 5px 0; color: #00aaff;"><em>June 2023 - December 2023</em></p>
+
+                        <h5 style="color: #ffaa00;">Responsibilities:</h5>
                         <ul style="margin: 10px 0;">
-                            <li><strong>Marketing digital :</strong> Planification et coordination des campagnes</li>
-                            <li><strong>Partenariats :</strong> Support aux collaborations stratégiques</li>
-                            <li><strong>Coordination :</strong> Gestion des ressources et développement</li>
-                            <li><strong>Veille concurrentielle :</strong> Analyse du marché</li>
+                            <li><strong>Digital marketing:</strong> Campaign planning and coordination</li>
+                            <li><strong>Partnerships:</strong> Strategic collaboration support</li>
+                            <li><strong>Coordination:</strong> Resource management and development</li>
+                            <li><strong>Competitive intelligence:</strong> Market analysis</li>
                         </ul>
                     </div>
-                    
+
                     <h3>🌟 Community Manager</h3>
                     <div style="background: rgba(0,255,170,0.1); padding: 15px; border-left: 4px solid #00ffaa; margin: 10px 0;">
                         <h4 style="color: #00ffaa; margin: 0 0 10px 0;">TeachR - Paris</h4>
-                        <p style="margin: 5px 0; color: #00aaff;"><em>Mai 2022 - Juillet 2022</em></p>
+                        <p style="margin: 5px 0; color: #00aaff;"><em>May 2022 - July 2022</em></p>
 
-                        <h5 style="color: #00ffaa;">Réalisations :</h5>
+                        <h5 style="color: #00ffaa;">Achievements:</h5>
                         <ul style="margin: 10px 0;">
-                            <li><strong>Contenu créatif :</strong> Planning éditorial Facebook & Instagram</li>
-                            <li><strong>Production visuelle :</strong> Création de visuels et GIFs</li>
-                            <li><strong>Influence :</strong> Co-création de publications sponsorisées</li>
-                            <li><strong>Développement TikTok :</strong> Stratégie de croissance organique</li>
+                            <li><strong>Creative content:</strong> Facebook & Instagram editorial planning</li>
+                            <li><strong>Visual production:</strong> Design of visuals and GIFs</li>
+                            <li><strong>Influencer marketing:</strong> Co-creation of sponsored posts</li>
+                            <li><strong>TikTok growth:</strong> Organic growth strategy</li>
                         </ul>
                     </div>
                 `
@@ -274,7 +274,7 @@ export const SOLAR_SYSTEM_CONFIG = {
         },
         {
             name: "Jupiter",
-            section: "Compétences",
+            section: "Skills",
             position: [750, 0, 0],
             orbitRadius: 750,
             radius: 25,
@@ -289,46 +289,46 @@ export const SOLAR_SYSTEM_CONFIG = {
             bands: true,
             redSpot: true,
             content: {
-                title: "Compétences & Certifications",
+                title: "Skills & Certifications",
                 description: `
-                    <h3>🛠️ Compétences Techniques</h3>
+                    <h3>🛠️ Technical Skills</h3>
                     <div style="background: rgba(0,170,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
-                        <h4 style="color: #00aaff;">Pack Adobe</h4>
-                        <p>Maîtrise avancée de la suite Adobe (Photoshop, Illustrator, InDesign)</p>
+                        <h4 style="color: #00aaff;">Adobe Suite</h4>
+                        <p>Advanced proficiency in Adobe Suite (Photoshop, Illustrator, InDesign)</p>
                     </div>
 
                     <div style="background: rgba(255,170,0,0.1); padding: 15px; border-left: 4px solid #ffaa00; margin: 10px 0;">
-                        <h4 style="color: #ffaa00;">Python et SQL</h4>
-                        <p>Programmation, manipulation de données, automatisation, requêtes SQL</p>
+                        <h4 style="color: #ffaa00;">Python & SQL</h4>
+                        <p>Programming, data manipulation, automation, SQL queries</p>
                     </div>
 
                     <div style="background: rgba(0,255,170,0.1); padding: 15px; border-left: 4px solid #00ffaa; margin: 10px 0;">
-                        <h4 style="color: #00ffaa;">Pack Office</h4>
-                        <p>Excel avancé (tableaux croisés, Power Query), PowerPoint, Word</p>
+                        <h4 style="color: #00ffaa;">Microsoft Office</h4>
+                        <p>Advanced Excel (pivot tables, Power Query), PowerPoint, Word</p>
                     </div>
 
                     <div style="background: rgba(170,0,255,0.1); padding: 15px; border-left: 4px solid #aa00ff; margin: 10px 0;">
                         <h4 style="color: #aa00ff;">Visual Studio Code</h4>
-                        <p>Développement et programmation multi-langages</p>
+                        <p>Multi-language development and programming</p>
                     </div>
 
                     <div style="background: rgba(0,200,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
                         <h4 style="color: #00aaff;">CRM</h4>
-                        <p>Salesforce, Microsoft Dynamics 365, Zoho CRM, Pipedrive, Freshsales — gestion de la relation client, segmentation, reporting</p>
+                        <p>Salesforce, Microsoft Dynamics 365, Zoho CRM, Pipedrive, Freshsales — customer relationship management, segmentation, reporting</p>
                     </div>
 
                     <div style="background: rgba(255,120,0,0.1); padding: 15px; border-left: 4px solid #ff7800; margin: 10px 0;">
-                        <h4 style="color: #ff7800;">Statistiques appliquées</h4>
-                        <p>Tests statistiques, régression, échantillonnage, analyse exploratoire</p>
+                        <h4 style="color: #ff7800;">Applied Statistics</h4>
+                        <p>Statistical tests, regression, sampling, exploratory analysis</p>
                     </div>
 
                     <div style="background: rgba(0,180,120,0.1); padding: 15px; border-left: 4px solid #00b478; margin: 10px 0;">
-                        <h4 style="color: #00b478;">Outils collaboratifs</h4>
+                        <h4 style="color: #00b478;">Collaboration Tools</h4>
                         <p>Notion, Trello, Slack, Microsoft Teams, Google Workspace, Confluence</p>
                     </div>
 
                     <div style="background: rgba(255,200,0,0.1); padding: 15px; border-left: 4px solid #ffc800; margin: 10px 0;">
-                        <h4 style="color: #ffc800;">Outils Agile</h4>
+                        <h4 style="color: #ffc800;">Agile Tools</h4>
                         <p>Jira, Azure DevOps, Monday.com — Scrum, Kanban, user stories</p>
                     </div>
 
@@ -336,49 +336,49 @@ export const SOLAR_SYSTEM_CONFIG = {
                     <ul style="list-style: none; padding: 0;">
                         <li style="padding: 5px 0;">✅ <strong>Supervised Machine Learning</strong> (DeepLearning.AI)</li>
                         <li style="padding: 5px 0;">✅ <strong>Introduction to Financial Markets</strong> (Yale University / Coursera)</li>
-                        <li style="padding: 5px 0;">✅ <strong>Scikit-learn pour le machine learning</strong> (LinkedIn)</li>
+                        <li style="padding: 5px 0;">✅ <strong>Scikit-learn for Machine Learning</strong> (LinkedIn)</li>
                         <li style="padding: 5px 0;">✅ <strong>Intro to Machine Learning</strong> (Kaggle)</li>
-                        <li style="padding: 5px 0;">✅ <strong>Les fondements du machine learning</strong> (LinkedIn)</li>
-                        <li style="padding: 5px 0;">✅ <strong>Python pour la data science</strong> (LinkedIn)</li>
-                        <li style="padding: 5px 0;">✅ <strong>Les fondements de la gestion de projet agile</strong> (LinkedIn)</li>
+                        <li style="padding: 5px 0;">✅ <strong>Machine Learning Fundamentals</strong> (LinkedIn)</li>
+                        <li style="padding: 5px 0;">✅ <strong>Python for Data Science</strong> (LinkedIn)</li>
+                        <li style="padding: 5px 0;">✅ <strong>Agile Project Management Fundamentals</strong> (LinkedIn)</li>
                         <li style="padding: 5px 0;">✅ <strong>IELTS 6.5</strong> (British Council)</li>
                     </ul>
 
-                    <h3>🚀 Compétences Avancées</h3>
+                    <h3>🚀 Advanced Skills</h3>
                     <div style="background: rgba(128,0,255,0.1); padding: 15px; border-left: 4px solid #8000ff; margin: 10px 0;">
-                        <h4 style="color: #8000ff;">Machine Learning & IA</h4>
-                        <p>scikit-learn, pandas, NumPy, modélisation prédictive, détection d'anomalies</p>
+                        <h4 style="color: #8000ff;">Machine Learning & AI</h4>
+                        <p>scikit-learn, pandas, NumPy, predictive modeling, anomaly detection</p>
                     </div>
 
                     <div style="background: rgba(255,100,100,0.1); padding: 15px; border-left: 4px solid #ff6464; margin: 10px 0;">
-                        <h4 style="color: #ff6464;">Finance Quantitative</h4>
-                        <p>Analyse de marchés financiers, gestion des risques, classification d'instruments</p>
+                        <h4 style="color: #ff6464;">Quantitative Finance</h4>
+                        <p>Financial market analysis, risk management, instrument classification</p>
                     </div>
 
                     <div style="background: rgba(0,200,200,0.1); padding: 15px; border-left: 4px solid #00c8c8; margin: 10px 0;">
-                        <h4 style="color: #00c8c8;">Développement Web</h4>
-                        <p>JavaScript, Three.js, HTML/CSS, applications interactives 3D</p>
+                        <h4 style="color: #00c8c8;">Web Development</h4>
+                        <p>JavaScript, Three.js, HTML/CSS, interactive 3D applications</p>
                     </div>
 
                     <div style="background: rgba(100,255,100,0.1); padding: 15px; border-left: 4px solid #64ff64; margin: 10px 0;">
                         <h4 style="color: #64ff64;">Data Visualization</h4>
-                        <p>Streamlit, tableaux de bord interactifs, analyse exploratoire</p>
+                        <p>Streamlit, interactive dashboards, exploratory analysis</p>
                     </div>
 
                     <h3>🤝 Soft Skills</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 5px 0;">• Communication claire et pédagogique</li>
-                        <li style="padding: 5px 0;">• Esprit analytique et rigoureux</li>
-                        <li style="padding: 5px 0;">• Adaptabilité</li>
-                        <li style="padding: 5px 0;">• Initiative et autonomie</li>
-                        <li style="padding: 5px 0;">• Esprit d'équipe</li>
-                        <li style="padding: 5px 0;">• Gestion de projet</li>
+                        <li style="padding: 5px 0;">• Clear and educational communication</li>
+                        <li style="padding: 5px 0;">• Analytical and rigorous mindset</li>
+                        <li style="padding: 5px 0;">• Adaptability</li>
+                        <li style="padding: 5px 0;">• Initiative and autonomy</li>
+                        <li style="padding: 5px 0;">• Team spirit</li>
+                        <li style="padding: 5px 0;">• Project management</li>
                     </ul>
                 `
             }
         },
         {
-            name: "Saturne",
+            name: "Saturn",
             section: "Contact",
             position: [950, 0, 0],
             orbitRadius: 950,
@@ -396,16 +396,16 @@ export const SOLAR_SYSTEM_CONFIG = {
             ringOuterRadius: 50,
             bands: true,
             content: {
-                title: "Contactez-moi",
+                title: "Contact Me",
                 description: `
-                    <h3>Informations de Contact</h3>
+                    <h3>Contact Information</h3>
                     <div style="background: rgba(0,170,255,0.1); padding: 15px; border-left: 4px solid #00aaff; margin: 10px 0;">
-                        <p style="margin: 8px 0; font-size: 14px;"><strong>Téléphone :</strong> +33 7 82 75 43 54</p>
-                        <p style="margin: 8px 0; font-size: 14px;"><strong>Email :</strong> amine.rahmani21@neoma-bs.com</p>
-                        <p style="margin: 8px 0; font-size: 14px;"><strong> Localisation :</strong> France</p>
+                        <p style="margin: 8px 0; font-size: 14px;"><strong>Phone:</strong> +33 7 82 75 43 54</p>
+                        <p style="margin: 8px 0; font-size: 14px;"><strong>Email:</strong> amine.rahmani21@neoma-bs.com</p>
+                        <p style="margin: 8px 0; font-size: 14px;"><strong>Location:</strong> France</p>
                     </div>
 
-                    <h3>🌐 Liens Professionnels</h3>
+                    <h3>🌐 Professional Links</h3>
                     <div style="background: rgba(255,170,0,0.1); padding: 15px; border-left: 4px solid #ffaa00; margin: 10px 0;">
                         <div style="margin: 10px 0;">
                             <a href="https://amine-rahmanii.github.io/Portfolio/" target="_blank" 
@@ -419,10 +419,10 @@ export const SOLAR_SYSTEM_CONFIG = {
                         </div>
                     </div>
 
-                    <h3>🌐 Disponibilité</h3>
+                    <h3>🌐 Availability</h3>
                     <div style="background: rgba(0,255,100,0.1); padding: 15px; border-left: 4px solid #00ff64; margin: 10px 0;">
                         <p style="color: #00ff64; font-weight: bold; margin: 5px 0;">
-                            🌐 Recherche d'un stage de 6 mois à partir de janvier 2026
+                            🌐 Looking for a 6-month internship starting January 2026
                         </p>
                     </div>
                           
@@ -432,7 +432,7 @@ export const SOLAR_SYSTEM_CONFIG = {
     ]
 };
 
-// Configuration des contrÃƒÂ´les
+// Controls configuration
 export const CONTROLS_CONFIG = {
     movement: {
         speed: 2.0,
@@ -452,22 +452,22 @@ export const CONTROLS_CONFIG = {
         idle: {
             intensity: 0.002,
             frequency: 2.0,
-            description: "Vibrations minimales du vaisseau au repos"
+            description: "Minimal spaceship vibrations at rest"
         },
         normal: {
             intensity: 0.008,
             frequency: 5.0,
-            description: "Vibrations modÃƒÂ©rÃƒÂ©es pendant la navigation"
+            description: "Moderate vibrations during navigation"
         },
         boost: {
             intensity: 0.025,
             frequency: 12.0,
-            description: "Vibrations intenses en mode accÃƒÂ©lÃƒÂ©ration"
+            description: "Intense vibrations in boost mode"
         }
     }
 };
 
-// Configuration de l'environnement
+// Environment configuration
 export const ENVIRONMENT_CONFIG = {
     starField: {
         count: 5000,
