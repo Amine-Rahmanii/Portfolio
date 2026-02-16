@@ -17,6 +17,11 @@ body {
     user-select: none; /* Propriété standard */
     -webkit-touch-callout: none; /* Désactive le menu contextuel iOS */
     -webkit-tap-highlight-color: transparent; /* Supprime la surbrillance de tap */
+    touch-action: none; /* Disable browser gestures (pinch-to-zoom, pan) */
+}
+
+canvas {
+    touch-action: none;
 }
 
 /* Interface du cockpit */

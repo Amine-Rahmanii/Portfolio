@@ -240,12 +240,18 @@ class SpaceshipControls {
             this.domElement.addEventListener('touchmove', (event) => this.onTouchMove(event), { passive: false });
             this.domElement.addEventListener('touchend', (event) => this.onTouchEnd(event), { passive: false });
             
-            // Empêcher le zoom et les gestes par défaut
+            // Prevent pinch-to-zoom and all browser gestures
             document.addEventListener('touchmove', (event) => {
-                if (event.scale !== 1) { event.preventDefault(); }
+                if (event.touches.length > 1) { event.preventDefault(); }
             }, { passive: false });
-            
+
             document.addEventListener('gesturestart', (event) => {
+                event.preventDefault();
+            });
+            document.addEventListener('gesturechange', (event) => {
+                event.preventDefault();
+            });
+            document.addEventListener('gestureend', (event) => {
                 event.preventDefault();
             });
         }
