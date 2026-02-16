@@ -46,9 +46,10 @@ class SpaceshipControls {
             isLocked: false
         };
         
-        // État tactile pour mobile
+        // Mobile touch state (tracks by touch identifier for multi-touch)
         this.touch = {
             isActive: false,
+            touchId: null,
             startX: 0,
             startY: 0,
             currentX: 0,
@@ -355,41 +356,58 @@ class SpaceshipControls {
     
     onTouchStart(event) {
         event.preventDefault();
-        
-        if (event.touches.length === 1) {
-            this.touch.isActive = true;
-            this.touch.startX = event.touches[0].clientX;
-            this.touch.startY = event.touches[0].clientY;
-            this.touch.currentX = this.touch.startX;
-            this.touch.currentY = this.touch.startY;
-        }
+
+        // Already tracking a camera touch
+        if (this.touch.isActive) return;
+
+        const touch = event.changedTouches[0];
+        this.touch.isActive = true;
+        this.touch.touchId = touch.identifier;
+        this.touch.startX = touch.clientX;
+        this.touch.startY = touch.clientY;
+        this.touch.currentX = touch.clientX;
+        this.touch.currentY = touch.clientY;
     }
     
     onTouchMove(event) {
-        if (!this.touch.isActive || event.touches.length !== 1) return;
-        
+        if (!this.touch.isActive) return;
+
         event.preventDefault();
-        
-        const touch = event.touches[0];
-        this.touch.deltaX = touch.clientX - this.touch.currentX;
-        this.touch.deltaY = touch.clientY - this.touch.currentY;
-        
-        this.touch.currentX = touch.clientX;
-        this.touch.currentY = touch.clientY;
-        
-        // Appliquer la rotation basée sur le mouvement tactile
+
+        // Find our tracked camera touch by identifier
+        let cameraTouch = null;
+        for (let i = 0; i < event.touches.length; i++) {
+            if (event.touches[i].identifier === this.touch.touchId) {
+                cameraTouch = event.touches[i];
+                break;
+            }
+        }
+        if (!cameraTouch) return;
+
+        this.touch.deltaX = cameraTouch.clientX - this.touch.currentX;
+        this.touch.deltaY = cameraTouch.clientY - this.touch.currentY;
+
+        this.touch.currentX = cameraTouch.clientX;
+        this.touch.currentY = cameraTouch.clientY;
+
         this.angularVelocity.y -= this.touch.deltaX * this.touch.sensitivity;
         this.angularVelocity.x -= this.touch.deltaY * this.touch.sensitivity;
-        
-        // Limiter la rotation verticale
         this.angularVelocity.x = Math.max(-Math.PI/2, Math.min(Math.PI/2, this.angularVelocity.x));
     }
     
     onTouchEnd(event) {
         event.preventDefault();
-        this.touch.isActive = false;
-        this.touch.deltaX = 0;
-        this.touch.deltaY = 0;
+
+        // Only release if our tracked camera touch ended
+        for (let i = 0; i < event.changedTouches.length; i++) {
+            if (event.changedTouches[i].identifier === this.touch.touchId) {
+                this.touch.isActive = false;
+                this.touch.touchId = null;
+                this.touch.deltaX = 0;
+                this.touch.deltaY = 0;
+                break;
+            }
+        }
     }
     
     showMobileControls() {
@@ -580,24 +598,45 @@ class SpaceshipControls {
     setupJoystick(container, knob) {
         let isDragging = false;
         let centerX, centerY;
-        
+        let joystickTouchId = null;
+
         const startDrag = (event) => {
             isDragging = true;
             const rect = container.getBoundingClientRect();
             centerX = rect.left + rect.width / 2;
             centerY = rect.top + rect.height / 2;
-            
+
+            // Track this specific touch
+            if (event.changedTouches) {
+                joystickTouchId = event.changedTouches[0].identifier;
+            }
+
             container.style.background = 'rgba(0, 255, 255, 0.25)';
             container.style.borderColor = 'rgba(0, 255, 255, 0.6)';
             knob.style.background = 'rgba(0, 255, 255, 0.9)';
             knob.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.6)';
         };
-        
+
         const drag = (event) => {
             if (!isDragging) return;
-            
-            const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-            const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+
+            let clientX, clientY;
+            if (event.touches) {
+                // Find our joystick touch by identifier
+                let found = false;
+                for (let i = 0; i < event.touches.length; i++) {
+                    if (event.touches[i].identifier === joystickTouchId) {
+                        clientX = event.touches[i].clientX;
+                        clientY = event.touches[i].clientY;
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) return;
+            } else {
+                clientX = event.clientX;
+                clientY = event.clientY;
+            }
             
             const deltaX = clientX - centerX;
             const deltaY = clientY - centerY;
@@ -636,15 +675,27 @@ class SpaceshipControls {
             }
         };
         
-        const endDrag = () => {
+        const endDrag = (event) => {
+            // For touch events, only end if our specific joystick touch ended
+            if (event.changedTouches) {
+                let found = false;
+                for (let i = 0; i < event.changedTouches.length; i++) {
+                    if (event.changedTouches[i].identifier === joystickTouchId) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) return;
+            }
+
             isDragging = false;
+            joystickTouchId = null;
             knob.style.transform = 'translate(-50%, -50%)';
             container.style.background = 'rgba(0, 255, 255, 0.1)';
             container.style.borderColor = 'rgba(0, 255, 255, 0.3)';
             knob.style.background = 'rgba(0, 255, 255, 0.6)';
             knob.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.4)';
-            
-            // Arrêter tous les mouvements
+
             this.keys.forward = false;
             this.keys.backward = false;
             this.keys.left = false;
